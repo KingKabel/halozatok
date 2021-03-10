@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="külső">
+        <div id="kérdés_szöveg">
+            <!--Kérdés szövege-->
+            <b>Mennyi 2+2 ?</b>
+        </div>
+
+        <div id="középső">
+            <div id="válaszok">
+                <div id="válasz1" class="kerdes kattintható rossz"><!--Válasz 1-->Nem tudom</div>
+                <div id="válasz2" class="kerdes kattintható jó"><!--Válasz 2-->4</div>
+                <div id="válasz3" class="kerdes kattintható rossz"><!--Válasz 3-->"Néha, Winston. Néha öt. Néha három. Néha egyszerre mind a három."</div>
+            </div>
+            <div id="kép">
+                <img id="kép1" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" />
+            </div>
+        </div>
+        <div id="vezérlő">
+            <div class="gomb kattintható">Vissza</div>
+            <div class="gomb kattintható">Előre</div>
+        </div>
+    </div>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        div {
+            margin: 10px;
+            border: 1px solid fuchsia
+        }
+
+        #külső {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #kérdés_szöveg {
+            display: flex;
+            flex-direction: row;
+            font-size: 30px;
+
+        }
+
+        #középső {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1
+        }
+        #kép {
+            overflow: hidden;
+            flex-shrink: 0;
+            flex-shrink: 0;
+        }
+
+        #válaszok {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        #vezérlő {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .gomb {
+            padding: 20px;
+            width: 80px;
+            cursor: pointer
+        }
+
+            .gomb:hover {
+                background-color: fuchsia;
+                color: white;
+            }
+
+        .kattintható:hover {
+            background-color: fuchsia;
+            color: white;
+            cursor: pointer;
+        }
+        .kerdes {
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .jó {
+            background-color: forestgreen;
+            color: white;
+        }
+
+        .rossz {
+            background-color: red;
+            color: white;
+        }
+
+
+    </style>
+</body>
+</html>
