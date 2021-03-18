@@ -1,10 +1,16 @@
-﻿html, body {
+﻿* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
 div {
     margin: 10px;
-    border: 1px solid fuchsia
+    border: 1px solid fuchsia;
 }
 
 #külső {
@@ -22,7 +28,7 @@ div {
 #középső {
     display: flex;
     flex-direction: row;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 #kép {
@@ -45,7 +51,7 @@ div {
 .gomb {
     padding: 20px;
     width: 80px;
-    cursor: pointer
+    cursor: pointer;
 }
 
     .gomb:hover {
