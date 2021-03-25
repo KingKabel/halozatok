@@ -2,10 +2,29 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="hajo.css" rel="stylesheet" />
     <title></title>
+    <link href="hajo.css" rel="stylesheet" />
+    <script src="hetedik.js"></script>
 </head>
 <body>
+    <!--<div id="ide"></div>-->
+    <!--<script>
+        fetch("/questions.json").
+            then(response => response.json())
+            .then(data => adatérkezett(data));
+
+        function adatérkezett(adat) {
+            document.getElementById("ide");
+            console.log(`${adat.length} darab kérdés érkezett`)
+
+            for (var i = 0; i < adat.length; i++) {
+                console.log(adat[i].questionText)
+                let elem = document.createElement("div")
+                elem.innerHTML = adat[i].questionText
+                ide.appendChild(elem)
+            }
+        }
+    </script>-->
     <div id="külső">
         <div id="kérdés_szöveg">
             <!--Kérdés szövege-->
@@ -23,86 +42,9 @@
             </div>
         </div>
         <div id="vezérlő">
-            <div class="gomb kattintható">Vissza</div>
-            <div class="gomb kattintható">Előre</div>
+            <div onclick="vissza()" class="gomb kattintható">Vissza</div>
+            <div onclick="előre()" class="gomb kattintható">Előre</div>
         </div>
     </div>
-    <!--<style>
-        html, body {
-            height: 100%;
-        }
-
-        div {
-            margin: 10px;
-            border: 1px solid fuchsia
-        }
-
-        #külső {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #kérdés_szöveg {
-            display: flex;
-            flex-direction: row;
-            font-size: 30px;
-
-        }
-
-        #középső {
-            display: flex;
-            flex-direction: row;
-            flex-grow: 1
-        }
-        #kép {
-            overflow: hidden;
-            flex-grow: 0;
-            flex-shrink: 0;
-        }
-
-        #válaszok {
-            flex-grow: 1;
-            flex-shrink: 1;
-        }
-
-        #vezérlő {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .gomb {
-            padding: 20px;
-            width: 80px;
-            cursor: pointer
-        }
-
-            .gomb:hover {
-                background-color: fuchsia;
-                color: white;
-            }
-
-        .kattintható:hover {
-            background-color: fuchsia;
-            color: white;
-            cursor: pointer;
-        }
-        .kerdes {
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .jó {
-            background-color: forestgreen;
-            color: white;
-        }
-
-        .rossz {
-            background-color: red;
-            color: white;
-        }
-
-
-    </style>-->
 </body>
 </html>
