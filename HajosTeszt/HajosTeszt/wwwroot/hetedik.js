@@ -4,20 +4,38 @@ window.onload = () => {
     console.log("letöltés start");
     letöltés();
 }
+
+function letöltés () {
+        fetch('/questions/${kérdésCount}')
+            .then(response => response.json())
+            .then(data => letöltésBefejeződött(data)
+            );
+}
+
 function letöltésBefejeződött(d) {
     console.log("Sikeres letöltés");
     console.log(d);
     console.log(`${d.length} kérdés érkezett`);
     kérdések = d;
-    kérdésMegjelenítés(kérdésCount);
+    kérdésbetöltés(kérdésCount);
 }
-function letöltés () {
-        fetch('/questions.json')
-            .then(response => response.json())
-            .then(data => letöltésBefejeződött(data)
-            );
+
+function kérdésbetöltés(id) {
+    fetch('/questions/${id}')
+        .then(válaszFeldolgozás)
+        .then(kérdésMegjelenítés);
 }
+function válaszFeldolgozás(válasz) {
+    if (!válasz.ok) {
+        console.error('Hibás válasz: ${response.status}')
+    }
+    else {
+        return válasz.json()
+    }
+}
+
 function kérdésMegjelenítés(k) {
+    console.log(k);
     document.getElementById("kérdés_szöveg").innerHTML = kérdések[k].questionText;
 
     document.getElementById("válasz1").innerHTML = kérdések[k].answer1;
