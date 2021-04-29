@@ -35,5 +35,18 @@ namespace HajosTeszt.Controllers
 
             return new JsonResult(kérdések);
         }
+
+        [HttpGet]
+        [Route("questions/count")]
+        public ActionResult M3()
+        {
+            HajostesztContext context = new HajostesztContext();
+            int kérdésekSzáma = context.Questions.Count();
+            return new ContentResult
+            {
+                ContentType = System.Net.Mime.MediaTypeNames.Text.Plain, //"text/plain"
+                Content = kérdésekSzáma.ToString()
+            };
+        }
     }
 }
