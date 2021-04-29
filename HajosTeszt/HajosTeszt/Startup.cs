@@ -44,7 +44,7 @@ namespace HajosTeszt
 
             app.UseEndpoints(endpoints =>
             {
-            endpoints.MapControllers();
+                endpoints.MapControllers();
             });
         }
     }

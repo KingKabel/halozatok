@@ -14,7 +14,7 @@ namespace HajosTeszt.Controllers
     {
         [HttpGet]
         [Route("questions/{sorszám}")]
-        public ActionResult M2(int sorszám)
+        public ActionResult M1(int sorszám)
         {
             HajostesztContext context = new HajostesztContext();
             var kérdés = (from x in context.Questions
@@ -28,7 +28,7 @@ namespace HajosTeszt.Controllers
 
         [HttpGet]
         [Route("questions/all")]
-        public ActionResult M1()
+        public ActionResult M2()
         {
             HajostesztContext context = new HajostesztContext();
             var kérdések = from x in context.Questions select x.QuestionText;
